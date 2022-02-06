@@ -1,17 +1,16 @@
 import React from "react";
-import './LoadMoreBtn.css'
+import {Button, ButtonDiv} from './LoadMoreBtn.styled.jsx'
 import PropTypes from 'prop-types';
 
 const LoadMoreBtn = ({ onClick }) => {
     return (
-        <div className="ButtonDiv">
-        <button
+        <ButtonDiv>
+        <Button
         type="submit"
-        className="Button"
         onClick={onClick}
     > Load more
-            </button>
-            </div>
+            </Button>
+            </ButtonDiv>
     )
 };
 

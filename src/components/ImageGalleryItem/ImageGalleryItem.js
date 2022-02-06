@@ -1,15 +1,15 @@
-import './ImageGalleryItem.css'
+import {ImageGalleryLi, ImageGallery} from './ImageGalleryItem.styled.jsx'
 import PropTypes from 'prop-types';
 
 const ImageGalleryItem = ({ webformatURL, largeImageURL, tags, id, largeImage  }) => {
     
     return (
-        <li key={id} className="ImageGalleryItem-item" onClick={() => largeImage(largeImageURL)}>
-            <img className="ImageGalleryItem-image" src={webformatURL}
+        <ImageGalleryLi key={id} onClick={() => largeImage(largeImageURL)}>
+            <ImageGallery src={webformatURL}
                 alt={tags}
                 
             />
-        </li>
+        </ImageGalleryLi>
     );
 };
 

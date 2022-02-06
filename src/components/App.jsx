@@ -8,8 +8,6 @@ import LoaderImg from "./Loader/Loader";
 import Modal from "./Modal/Modal";
 
 
-
-
 axios.defaults.baseURL = 'https://pixabay.com/api';
 
 class App extends Component {
@@ -22,11 +20,6 @@ class App extends Component {
     showModal: false,
     imageModal: null,
   }
-
-  /* 'idle' - простой, бездействие
-   'pending' - ожидается выполнение
-   'resolved' - выполнилось с результатом
-   'rejected' - отклонено */
 
   async componentDidUpdate(prevProps, prevState) {
     const prevSearch = prevState.searchItem;
@@ -83,7 +76,7 @@ class App extends Component {
     return (
     <>
         <Searchbar onSubmit={this.handleFormSubmit} />
-        <ImageGallery pictures={items} onClick={this.toggleModal} />
+        {this.componentDidUpdate && <ImageGallery pictures={items} onClick={this.toggleModal} />}
         {status === 'pending' && <LoaderImg />}
         {(items.length === 12 || items.length > 12) && <LoadMoreBtn onClick={this.ClickLoadBtn} />}
         {showModal && (

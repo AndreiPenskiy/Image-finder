@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './Searchbar.css';
+import  {SearchbarHead, SearchForm, SearchFormButton, SearchFormInput} from './Searchbar.styled.jsx';
 import { FcSearch } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
@@ -31,14 +31,13 @@ export default class Searchbar extends Component {
 
     render() {
     return (
-        <header className="Searchbar">
-            <form className="SearchForm" onSubmit={this.handleSubmit}>
-                <button type="submit" className="SearchForm-button">
-                    <FcSearch size={18}/> <span className="SearchForm-button-label">Search</span>
-                </button>
+        <SearchbarHead >
+            <SearchForm onSubmit={this.handleSubmit}>
+                <SearchFormButton type="submit">
+                    <FcSearch size={18}/> <span>Search</span>
+                </SearchFormButton>
 
-                <input
-                    className="SearchForm-input"
+                <SearchFormInput
                     type="text"
                     autoComplete="off"
                     autoFocus
@@ -46,8 +45,8 @@ export default class Searchbar extends Component {
                     value={this.state.searchItem}
                     onChange={this.handleSearchChange}
                 />
-            </form>
-        </header>
+            </SearchForm>
+        </SearchbarHead>
     );
 }
 };

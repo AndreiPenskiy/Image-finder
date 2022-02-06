@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import {createPortal} from 'react-dom'
-import './Modal.css';
+import {ModalDiv, Overlay} from './Modal.styled.jsx';
 import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export default class MOoal extends Component {
+export default class Modal extends Component {
 
    static propTypes = { children: PropTypes.node.isRequired };
 
@@ -31,11 +31,11 @@ export default class MOoal extends Component {
     
     render() {
         return createPortal(
-            <div className="Overlay" onClick={this.handleBackdropClick}>
-                <div className="Modal">
+            <Overlay onClick={this.handleBackdropClick}>
+                <ModalDiv >
                     {this.props.children}
-                </div>
-            </div>, modalRoot
+                </ModalDiv>
+            </Overlay>, modalRoot
         )};
 };
 

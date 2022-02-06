@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components"
+
+export const GlobalStyle = createGlobalStyle`
+
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -25,3 +29,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+`
+
+
+

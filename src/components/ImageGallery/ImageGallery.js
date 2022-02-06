@@ -1,11 +1,11 @@
 import ImageGalleryItem from "components/ImageGalleryItem/ImageGalleryItem";
-import './ImageGallery.css';
+import {ImageGalleryList} from './ImageGallery.styled.jsx';
 import PropTypes from 'prop-types';
 
 
 export const ImageGallery = ({ pictures, onClick }) => {
     return (
-        <ul className="ImageGallery">
+        <ImageGalleryList>
             {pictures.map(({ id, webformatURL, largeImageURL, tags }) => (
                 <ImageGalleryItem
                     key={id}
@@ -15,7 +15,7 @@ export const ImageGallery = ({ pictures, onClick }) => {
                     largeImage={onClick}
                     />
             ))}
-    </ul>
+    </ImageGalleryList>
     )
 };
 
