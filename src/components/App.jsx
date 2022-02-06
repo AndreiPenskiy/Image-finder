@@ -9,6 +9,7 @@ import Modal from "./Modal/Modal";
 
 
 
+
 axios.defaults.baseURL = 'https://pixabay.com/api';
 
 class App extends Component {
