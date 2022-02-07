@@ -76,7 +76,7 @@ class App extends Component {
     return (
     <>
         <Searchbar onSubmit={this.handleFormSubmit} />
-        {this.componentDidUpdate && <ImageGallery pictures={items} onClick={this.toggleModal} />}
+        {items.length > 0 && <ImageGallery pictures={items} onClick={this.toggleModal} />}
         {status === 'pending' && <LoaderImg />}
         {(items.length === 12 || items.length > 12) && <LoadMoreBtn onClick={this.ClickLoadBtn} />}
         {showModal && (
